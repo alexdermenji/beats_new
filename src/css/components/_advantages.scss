@@ -1,0 +1,27 @@
+.advantages {
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    max-width: rem(170px);
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: rem(8px);
+    }
+  }
+  &__icon {
+    width: rem(52px);
+    height: rem(52px);
+    margin-right: rem(11px);
+  }
+}
+
+@include tablets {
+  .advantages {
+    display: none;
+  }
+}

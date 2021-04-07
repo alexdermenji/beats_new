@@ -1,0 +1,48 @@
+.scroll {
+  position: fixed;
+  top: rem(240px);
+  right: rem(49px);
+  z-index: 10;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: block;
+    border-radius: 50%;
+    width: rem(9px);
+    height: rem(9px);
+    background-color: $color-primary;
+    opacity: 0.6;
+    margin-bottom: rem(13px);
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__item--light {
+    background-color: $color-white;
+  }
+  &__item--active {
+    background-color: $color-secondary;
+    opacity: 1;
+    &:before {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: rem(15px);
+      height: rem(15px);
+      border: rem(3px) solid red;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@include tablets {
+  .scroll {
+    display: none;
+  }
+}

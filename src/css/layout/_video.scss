@@ -1,0 +1,51 @@
+.video {
+  position: relative;
+  background-color: $color-grey-lighter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: rem(650px);
+  @include phones {
+    height: 100%;
+  }
+
+  &:before {
+    position: absolute;
+    left: 10%;
+    top: rem(-17px);
+    content: "";
+    width: rem(35px);
+    height: rem(35px);
+    background-color: #868686;
+    border-radius: 50%;
+  }
+
+  &::after {
+    z-index: 20;
+    position: absolute;
+    right: 10%;
+    bottom: -25px;
+    content: "";
+    width: rem(50px);
+    height: rem(50px);
+    background: url(../img/icons/icon-pentagon.png) no-repeat center;
+    background-size: contain;
+  }
+  &__header {
+    text-align: center;
+    margin-bottom: rem(44px);
+  }
+
+  &__player {
+    margin: 0 auto;
+    position: relative;
+    width: rem(662px);
+    height: rem(392px);
+    @include tablets {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

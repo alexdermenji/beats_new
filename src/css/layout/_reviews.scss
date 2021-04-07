@@ -1,0 +1,45 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding-top: rem(64px);
+  padding-bottom: rem(63px);
+  @include phones {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__item {
+    margin-bottom: rem(15px);
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: rem(32px);
+    @include phones {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    width: rem(74px);
+    height: rem(74px);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: rem(6px);
+    cursor: pointer;
+    border: rem(4px) solid transparent;
+    &--active {
+      border: rem(4px) solid $color-secondary;
+    }
+    &:hover {
+      border: rem(4px) solid $color-secondary;
+    }
+  }
+}

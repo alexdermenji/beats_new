@@ -1,0 +1,53 @@
+.hamburger {
+  width: rem(26px);
+  height: rem(26px);
+  position: relative;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  &__btn {
+    background-color: $color-primary;
+    border-radius: rem(3px);
+    content: "";
+    display: block;
+    width: 100%;
+    height: rem(4px);
+    transition: all 0.5s ease-in-out;
+    &:before {
+      @extend .hamburger__btn;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:after {
+      @extend .hamburger__btn;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    &--close {
+      transform: rotate(45deg);
+      background-color: $color-white;
+      &:before {
+        display: none;
+      }
+      &:after {
+        transform: rotate(90deg);
+        background-color: $color-white;
+      }
+    }
+  }
+}
+
+@include tablets {
+  .hamburger {
+    display: flex;
+  }
+}
+
+.hamburger--close {
+  z-index: 110;
+  margin-left: auto;
+  display: flex;
+}

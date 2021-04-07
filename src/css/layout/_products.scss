@@ -1,0 +1,22 @@
+.products {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  min-height: rem(650px);
+  background-color: $color-grey-light;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: rem(-10px);
+    right: 10%;
+    width: rem(24px);
+    height: rem(24px);
+    transform: rotate(29deg);
+    background-color: $color-primary;
+  }
+  @include phones {
+    height: 100%;
+  }
+}

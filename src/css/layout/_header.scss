@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu {
+    padding: 0 1%;
+    width: 100%;
+    flex: 1;
+  }
+  @include tablets {
+    &__menu,
+    &__contacts {
+      display: none;
+    }
+    &__header__nav {
+      display: block;
+    }
+  }
+}

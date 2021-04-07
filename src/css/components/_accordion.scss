@@ -1,0 +1,86 @@
+.accordion {
+  height: 100%;
+  @include phones {
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    height: 100%;
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    display: flex;
+  }
+  &__header {
+    display: block;
+    position: relative;
+    min-width: rem(102px);
+    height: 100%;
+    &--first {
+      background-color: $color-grey-darkest;
+    }
+    &--second {
+      background-color: $color-black-dark;
+    }
+    &--third {
+      background-color: $color-red-light;
+    }
+
+    @include tablets {
+      min-width: rem(90px);
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: rotate(-90deg) translate(-50%, -50%);
+    transform-origin: 0 0;
+    white-space: nowrap;
+    font-size: rem(36px);
+  }
+
+  &__content {
+    color: $color-white;
+    background: rgba(51, 53, 55, 0.9);
+    backdrop-filter: blur(10px);
+    font-size: rem(16px);
+    line-height: rem(24px);
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &__item--active {
+    @include phones {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 100;
+    }
+  }
+
+  &__item--active > &__content {
+    width: rem(500px);
+    opacity: 1;
+    overflow: none;
+    padding: rem(40px);
+    transition: width 0.5s;
+
+    @include tablets {
+      width: 100%;
+    }
+    @include phones {
+      padding: rem(20px);
+    }
+  }
+}

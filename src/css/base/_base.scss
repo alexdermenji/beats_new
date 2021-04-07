@@ -1,0 +1,109 @@
+html {
+  font-size: $fontSize;
+  height: 100%;
+  @include tablets {
+    font-size: $fontSize -1px;
+  }
+  @include phones {
+    font-size: $fontSize -2px;
+  }
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  overflow: hidden;
+  height: 100%;
+  &__content {
+    height: 100%;
+    transition: transform 1s;
+    will-change: transform;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: rem(960px);
+  &--section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &--hero {
+    @extend .container--section;
+    justify-content: space-between;
+    background: url(../img/headphones.png) right center / 50% auto no-repeat;
+    @include tablets {
+      justify-content: flex-start;
+    }
+  }
+  &--features {
+    @extend .container--section;
+    justify-content: center;
+  }
+  &--reviews {
+    @extend .container--features;
+  }
+  &--footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@include tablets {
+  .container {
+    width: 90%;
+  }
+  .container--hero {
+    background: none;
+  }
+}

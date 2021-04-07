@@ -1,0 +1,122 @@
+.features {
+  padding-top: rem(103px);
+  position: relative;
+  padding-bottom: rem(78px);
+  height: 100vh;
+  min-height: rem(650px);
+
+  @include phones {
+    height: 100%;
+  }
+  &:after {
+    @include icon(0px, 0px);
+    bottom: -26px;
+    left: rem(60px);
+    border: rem(30px) solid transparent;
+    border-left-color: $color-secondary;
+    border-right-width: 0;
+    transform: rotate(20deg);
+    border-bottom-width: rem(30px);
+    border-top-width: rem(30px);
+    z-index: 10;
+  }
+  &__list {
+    display: flex;
+    @include phones {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 3%;
+    max-width: 33.33%;
+    @include phones {
+      max-width: 100%;
+      flex-direction: row;
+      margin-bottom: rem(31px);
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: rem(0px);
+    }
+
+    &:not(:last-child)::after {
+      content: url(../img/icons/icon-separator.png);
+      position: absolute;
+      top: rem(30px);
+      right: 0%;
+      transform: translateX(50%);
+      @include tablets {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+    @include phones {
+      width: 70%;
+      text-align: left;
+      padding-left: rem(12px);
+    }
+  }
+
+  &__item-title {
+    margin-bottom: rem(7px);
+  }
+
+  &__item-text {
+    color: $color-ternary;
+    @include phones {
+      font-size: 16px;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: rem(62px);
+  }
+
+  &__title {
+    margin-bottom: rem(18px);
+  }
+  &__subtitle {
+    width: 60%;
+    font-size: rem(16px);
+    line-height: rem(19px);
+    color: $color-ternary;
+    @include phones {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey-light;
+    border-radius: 50%;
+    width: rem(128px);
+    height: rem(128px);
+    margin-bottom: rem(24px);
+
+    @include phones {
+      width: 30%;
+      min-width: 115px;
+    }
+  }
+
+  &__icon {
+    width: rem(68px);
+    height: rem(68px);
+  }
+}

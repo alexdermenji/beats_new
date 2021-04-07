@@ -1,0 +1,123 @@
+.team {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  @include phones {
+    height: 100%;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: rem(53px);
+  }
+  &__list {
+    display: flex;
+
+    &--desktop {
+      @include tablets {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      @include tablets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: calc(100% - 60px / 4);
+    max-height: rem(200px);
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    @include tablets {
+      width: 100%;
+      margin-right: 0;
+      max-height: none;
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__image {
+    margin-bottom: rem(25px);
+  }
+
+  &__person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 700;
+    margin-right: 5px;
+    @include tablets {
+      text-align: center;
+      font-size: rem(21px);
+    }
+  }
+
+  &__triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid red;
+    &--up {
+      border-top: none;
+      border-bottom: 10px solid red;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    padding-top: rem(11px);
+    &-wrap {
+      height: 0;
+      transition: height 0.5s;
+      overflow: hidden;
+    }
+
+    &--active {
+      height: auto;
+    }
+
+    @include tablets {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__position {
+    font-size: rem(16px);
+    color: $color-primary;
+    @include tablets {
+      font-size: rem(18px);
+      font-weight: 700;
+      margin-bottom: rem(10px);
+    }
+  }
+  &__achievements {
+    text-align: center;
+    font-size: rem(16px);
+    color: $color-ternary;
+    line-height: rem(18.5px);
+    width: 80%;
+    margin: 0 auto;
+    @include tablets {
+      width: 60%;
+    }
+  }
+}

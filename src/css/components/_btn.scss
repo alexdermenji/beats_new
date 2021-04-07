@@ -1,0 +1,36 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: $color-secondary;
+  padding: rem(18px) rem(41px);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-white;
+  border-radius: rem(100px);
+
+  &:hover {
+    background-color: #ca1b36;
+  }
+  &:focus {
+    outline: rem(3px) solid $color-secondary;
+  }
+
+  &--reset {
+    color: $color-white;
+    &:focus {
+      outline: rem(3px) solid $color-secondary;
+    }
+  }
+  &--slider {
+    font-size: rem(16px);
+    padding: rem(21px) rem(41px);
+  }
+}
+
+@include phones {
+  .btn {
+    font-size: rem(19px);
+    padding: rem(21px) rem(36px);
+  }
+}

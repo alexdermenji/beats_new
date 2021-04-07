@@ -1,0 +1,143 @@
+.player {
+  width: rem(662px);
+  height: rem(412px);
+  @include tablets {
+    width: 100%;
+    height: auto;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__play {
+    position: absolute;
+    min-width: rem(80px);
+    height: rem(80px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../img/icons/play.png) no-repeat center;
+    cursor: pointer;
+    &--active {
+      display: none;
+    }
+  }
+  &__controls {
+    background-color: #151515;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    padding: rem(9px) rem(17px);
+  }
+  &__start {
+    display: block;
+    width: 0;
+    height: 0;
+    border: rem(14px) solid transparent;
+    border-right-width: 0;
+    border-top-width: rem(14px);
+    border-left-color: $color-white;
+    padding: 0;
+    border-radius: 10%;
+    outline: none;
+  }
+  &__start {
+    height: rem(20px);
+    border-color: transparent transparent transparent $color-white;
+    transition: all ease;
+    will-change: border-width;
+    cursor: pointer;
+
+    // play state
+    border-style: solid;
+    border-width: rem(14px) 0 rem(14px) rem(14px);
+
+    // paused state
+    &.player__start--paused {
+      border-style: double;
+      border-width: 0px 0 0px rem(14px);
+    }
+  }
+
+  &__playback {
+    display: flex;
+    align-items: center;
+    @include tablets {
+      width: 70%;
+    }
+    @include phones {
+      width: 50%;
+    }
+    &-line {
+      position: relative;
+      cursor: pointer;
+      width: rem(442px);
+      height: rem(4px);
+      background-color: #333333;
+      @include tablets {
+        width: 100%;
+      }
+    }
+
+    &-redline {
+      background-color: #e01f3d;
+      cursor: pointer;
+      width: 20%;
+      height: rem(4px);
+      position: relative;
+    }
+    &-button {
+      bottom: rem(-5px);
+      right: 0%;
+      display: block;
+      background-color: #e01f3d;
+      width: rem(15px);
+      height: rem(15px);
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+
+  &__sound-icon {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    fill: $color-white;
+  }
+
+  &__sound-icon--mute {
+    fill: red;
+  }
+
+  &__sound-line {
+    position: relative;
+    cursor: pointer;
+    width: rem(60px);
+    height: rem(4px);
+    background-color: #333333;
+  }
+  &__sound-redline {
+    background-color: #e01f3d;
+    cursor: pointer;
+    width: 20%;
+    height: rem(4px);
+    position: relative;
+  }
+
+  &__sound-button {
+    bottom: rem(-5px);
+    right: 0%;
+    display: block;
+    background-color: #e01f3d;
+    width: rem(15px);
+    height: rem(15px);
+    border-radius: 50%;
+    position: absolute;
+  }
+}

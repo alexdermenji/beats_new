@@ -1,0 +1,176 @@
+.order {
+  display: flex;
+  justify-content: space-between;
+  outline-color: $color-secondary;
+  @include tablets {
+    flex-direction: column;
+    padding: 0 10%;
+  }
+  @include phones {
+    padding: 0;
+  }
+  &__column {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: rem(26px);
+      @include tablets {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    margin-bottom: rem(11px);
+    &-radio {
+      margin-bottom: rem(21px);
+      @include phones {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &-checkbox {
+      margin-bottom: rem(48px);
+      @include phones {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include tablets {
+        margin-bottom: rem(10px);
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    height: rem(58px);
+    border-radius: rem(4px);
+    margin-top: rem(6px);
+    overflow: hidden;
+    border: rem(3px) solid transparent;
+
+    &:focus,
+    &:hover {
+      outline: rem(3px) solid transparent;
+      border: rem(3px) solid $color-secondary;
+    }
+  }
+
+  &__input--error {
+    border: rem(3px) solid $color-secondary;
+  }
+
+  &__input-label {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+  }
+  &__label--top:not(:last-child) {
+    margin-right: rem(16px);
+  }
+  &__label--bottom:not(:last-child) {
+    margin-right: rem(13px);
+  }
+
+  &__textarea {
+    min-height: rem(150px);
+    margin-bottom: rem(26px);
+  }
+
+  &__radio-label {
+    display: block;
+    position: relative;
+    padding-left: rem(35px);
+    cursor: pointer;
+    user-select: none;
+    &:not(:last-child) {
+      margin-right: rem(16px);
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    left: rem(-9999px);
+    cursor: pointer;
+  }
+  &__checkmark {
+    position: absolute;
+    top: rem(-5px);
+    left: 0;
+    height: rem(25px);
+    width: rem(25px);
+    background-color: $color-white;
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: rem(13px);
+      width: rem(13px);
+      border-radius: 50%;
+      background: $color-secondary;
+    }
+  }
+
+  &__radio:checked ~ &__checkmark:after {
+    display: block;
+  }
+
+  &__checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: rem(35px);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__checkbox {
+    position: absolute;
+    left: rem(-9999px);
+    cursor: pointer;
+  }
+
+  &__custom-checkbox {
+    position: absolute;
+    top: rem(-5px);
+    left: 0;
+    height: rem(24px);
+    width: rem(24px);
+    background-color: $color-white;
+    border-radius: rem(4px);
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: rem(10px);
+      width: rem(10px);
+      background: url(../img/icons/icon-checkmark.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  &__checkbox:checked ~ &__custom-checkbox:after {
+    display: block;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    @include tablets {
+      justify-content: center;
+    }
+  }
+
+  &__btn {
+    margin-right: rem(16px);
+  }
+}

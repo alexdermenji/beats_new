@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  padding-top: rem(68px);
+  padding-bottom: rem(85px);
+  color: $color-white;
+  background: url("../img/bg/bg-form.png") no-repeat center;
+  background-size: cover;
+  @include phones {
+    height: 100%;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: rem(58px);
+    @include tablets {
+      margin-bottom: rem(10px);
+    }
+    @include phones {
+      margin-bottom: rem(5px);
+    }
+  }
+}

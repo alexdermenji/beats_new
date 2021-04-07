@@ -1,0 +1,56 @@
+.intro {
+  display: flex;
+  &__content {
+    width: 60%;
+  }
+
+  &__title {
+    width: 70%;
+    padding-top: rem(46px);
+    margin-bottom: rem(22px);
+  }
+
+  &__subtitle {
+    width: 70%;
+    font-size: rem(21px);
+    margin-bottom: rem(36px);
+  }
+}
+
+@include tablets {
+  .intro__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 10%;
+    &:before {
+      content: url(../img/headphones-small.png);
+    }
+  }
+  .intro__title {
+    width: 100%;
+    padding: 5% 5% 0 5%;
+    text-align: center;
+  }
+
+  .intro__subtitle {
+    width: 100%;
+    padding: 0 15%;
+    text-align: center;
+  }
+}
+
+@include phones {
+  .intro__content {
+    padding-top: 5%;
+  }
+  .intro__subtitle {
+    font-size: rem(18px);
+    line-height: rem(20px);
+  }
+
+  .intro__title {
+    padding: 5% 5% 0 5%;
+  }
+}

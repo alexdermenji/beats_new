@@ -1,0 +1,12 @@
+.contacts {
+  &__phone {
+    position: relative;
+    text-decoration: none;
+    color: $color-primary;
+  }
+  &__icon {
+    margin-right: rem(6px);
+    width: rem(14px);
+    height: rem(14px);
+  }
+}

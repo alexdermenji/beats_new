@@ -1,0 +1,18 @@
+.colours {
+  position: relative;
+  background: url(../img/bg/bg-accordion.jpg) no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  min-height: rem(650px);
+  padding-top: rem(120px);
+
+  @include phones {
+    height: 100%;
+  }
+
+  &__accordion {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

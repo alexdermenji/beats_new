@@ -1,0 +1,26 @@
+.footer {
+  background-color: $color-white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-top: rem(20px);
+  padding-bottom: rem(18px);
+  &__contacts {
+    @include phones {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__address {
+    @include phones {
+      display: block;
+      margin-bottom: rem(12px);
+    }
+  }
+
+  &__left {
+    @include phones {
+      margin-bottom: 12px;
+    }
+  }
+}

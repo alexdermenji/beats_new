@@ -1,0 +1,27 @@
+body {
+  font-family: "Play", sans-serif;
+  font-size: rem(18px);
+}
+
+.title--main {
+  font-weight: 700;
+  font-size: rem(48px);
+  line-height: rem(52px);
+  text-transform: uppercase;
+}
+
+.title--small {
+  font-size: rem(24px);
+  font-weight: 700;
+}
+
+.title--white {
+  color: $color-white;
+}
+
+@include phones {
+  .title--main {
+    font-size: rem(32px);
+    line-height: rem(36px);
+  }
+}
