@@ -8,6 +8,9 @@
   &__title {
     text-align: center;
     margin-bottom: rem(53px);
+    @include phones {
+      margin-bottom: rem(20px);
+    }
   }
   &__list {
     display: flex;

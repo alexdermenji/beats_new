@@ -50,6 +50,9 @@
     margin-top: rem(6px);
     overflow: hidden;
     border: rem(3px) solid transparent;
+    @include phones {
+      height: rem(38px);
+    }
 
     &:focus,
     &:hover {
@@ -77,6 +80,10 @@
   &__textarea {
     min-height: rem(150px);
     margin-bottom: rem(26px);
+
+    @include phones {
+      min-height: rem(75px);
+    }
   }
 
   &__radio-label {

@@ -5,17 +5,22 @@
   height: 100vh;
   min-height: rem(650px);
   position: relative;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   &:after {
     @include icon(rem(46px), rem(10px));
     background-color: $color-grey-dark;
     bottom: rem(-4px);
     right: rem(124px);
     transform: rotate(-45deg);
+
+    @include phones {
+      display: none;
+    }
   }
 
   @include phones {
-    min-height: rem(800px);
     height: 100%;
+    min-height: -webkit-fill-available;
+    // min-height: rem(800px);
   }
 }

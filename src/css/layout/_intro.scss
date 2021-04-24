@@ -43,7 +43,7 @@
 
 @include phones {
   .intro__content {
-    padding-top: 5%;
+    padding-top: 0;
   }
   .intro__subtitle {
     font-size: rem(18px);
@@ -52,6 +52,7 @@
   }
 
   .intro__title {
-    padding: 5% 5% 0 5%;
+    padding: 1% 1% 0 1%;
+    margin-bottom: rem(12px);
   }
 }

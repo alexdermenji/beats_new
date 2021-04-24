@@ -5,6 +5,10 @@
   position: relative;
   overflow: hidden;
 
+  @include phones {
+    padding: rem(22px) rem(22px) rem(22px) rem(10px);
+  }
+
   &:before {
     @include icon(rem(83px), rem(83px));
     left: 50%;
@@ -42,10 +46,16 @@
   &__content {
     flex: 1;
     padding-top: rem(35px);
+    @include phones {
+      padding-top: rem(15px);
+    }
   }
 
   &__title {
     margin-bottom: rem(27px);
+    @include phones {
+      margin-bottom: rem(10px);
+    }
   }
 
   &__text {
@@ -54,6 +64,9 @@
     width: 82%;
     @include tablets {
       width: 100%;
+    }
+    @include phones {
+      margin-bottom: rem(10px);
     }
   }
 
